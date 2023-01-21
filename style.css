@@ -1,19 +1,23 @@
 :root {
-  --stone-dark-grey: #666666;
-  --stone-light-grey: #999999;
+  --stone-dark-grey: rgb(102, 102, 102);
+  --stone-light-grey: rgb(153, 153, 153);
 
-  --primary: #446a44;
-  --on-primary: #fafffa;
-  --primary-container: #95e995;
-  --on-primary-container: #293f29;
+  --primary: rgb(68, 106, 68);
+  --on-primary: rgb(250, 255, 250);
+  --primary-translucent: rgba(68, 106, 68, 0.5);
+  --primary-container: rgb(149, 233, 149);
+  --on-primary-container: rgb(41, 63, 41);
 
-  --secondary: #6a5744;
-  --on-secondary: #fffaf0;
-  --secondary-container: #e9bf95;
-  --on-secondary-container: #3f3429;
+  --secondary: rgb(106, 87, 68);
+  --on-secondary: rgb(255, 250, 240);
+  --secondary-container: rgb(233, 191, 149);
+  --on-secondary-container: rgb(63, 52, 41);
 
   --neutral: var(--stone-dark-grey);
   --neutral-variant: var(--stone-light-grey);
+
+  --box-shadow: rgb(49, 49, 49);
+  --box-shadow-translucent: rgb(49, 49, 49, 0.5);
 }
 
 body {
@@ -34,40 +38,50 @@ h6 {
 header {
   color: var(--on-primary);
 
-  display: grid;
-  grid-template-columns: auto auto;
-  grid-template-rows: auto auto;
+  display: flex;
+  flex-direction: column;
+
+  width: 100vw;
+  height: 100vh;
 }
 
 header #nav-bar {
   background-color: var(--primary);
-  background: linear-gradient(var(--primary) 5rem, rgba(0, 0, 0, 0));
-  padding-bottom: 2rem;
-
-  grid-column: 1 / 3;
-  grid-row: 1;
-
+  box-shadow: 0 2px 12px 2px var(--box-shadow);
   z-index: 1;
+
+  display: flex;
+  flex-direction: row;
+  gap: 2.5vw;
+  align-items: center;
+
+  padding: 0.5rem 2.5vw;
 }
 
 header #nav-bar h1 {
   font-size: 3rem;
-  padding: 0.5rem 5vw;
 }
 
-header #front-image {
-  grid-column: 1 / 3;
-  grid-row: 1 / 3;
+header #banner {
+  flex-grow: 1;
 
-  z-index: 0;
+  background-image: url("/assets/pictures_of_jesus_crowd.jpg");
+  background-repeat: no-repeat;
+  background-position-y: 20%;
 
-  width: 100vw;
-  max-height: 100vh;
-  overflow: hidden
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  align-items: center;
+
+  padding: 0 15vw;
 }
 
-header img {
-  width: 100%;
+header #banner-text {
+  background-color: var(--primary-translucent);
+  padding: 2rem 2.5vw;
+  border-radius: 1rem;
+  box-shadow: 0 0 4px 0px var(--box-shadow-translucent);
 }
 
 /* SVG Animation */
