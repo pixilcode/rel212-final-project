@@ -1,0 +1,46 @@
+:root {
+  --stone-dark-grey: #666666;
+  --stone-light-grey: #999999;
+}
+
+body {
+  margin: 0;
+
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'EB Garamond', serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  color: var(--stone-light-grey);
+}
+
+header h1 {
+  font-size: 3rem;
+  background: linear-gradient(var(--stone-dark-grey) 50%, rgba(102, 102, 102, 0));
+}
+
+/* SVG Animation */
+
+#tomb-mountain {
+  fill: var(--stone-light-grey);
+}
+
+#tomb-stone {
+  fill: var(--stone-dark-grey);
+  transition: transform 0.75s;
+}
+
+button:hover~svg #tomb-stone {
+  transform: translateX(22%);
+}
+
+/* END SVG Animation */
