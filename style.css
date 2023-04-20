@@ -31,6 +31,7 @@ h4,
 h5,
 h6 {
   font-family: 'EB Garamond', serif;
+  font-weight: normal;
   margin: 0;
   padding: 0;
 }
@@ -82,21 +83,21 @@ header #banner-text {
   padding: 2rem 2.5vw;
   border-radius: 1rem;
   box-shadow: 0 0 4px 0px var(--box-shadow-translucent);
+  text-align: right;
+  max-width: 30vw;
 }
 
-/* SVG Animation */
-
-#tomb-mountain {
-  fill: var(--stone-light-grey);
+#banner-text h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  font-variant-caps: small-caps;
 }
 
-#tomb-stone {
-  fill: var(--stone-dark-grey);
-  transition: transform 0.75s;
+#banner-text p {
+  font-size: 1.25rem;
 }
 
-button:hover~svg #tomb-stone {
-  transform: translateX(22%);
+#banner-text strong {
+  font-variant-caps: small-caps;
+  font-weight: bold;
 }
-
-/* END SVG Animation */
