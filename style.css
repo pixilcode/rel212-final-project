@@ -12,6 +12,7 @@
   --on-secondary: rgb(255, 250, 240);
   --secondary-container: rgb(233, 191, 149);
   --on-secondary-container: rgb(63, 52, 41);
+  --secondary-container-translucent: rgba(233, 191, 149, 0.85);
 
   --neutral: var(--stone-dark-grey);
   --neutral-variant: var(--stone-light-grey);
@@ -100,4 +101,61 @@ header #banner-text {
 #banner-text strong {
   font-variant-caps: small-caps;
   font-weight: bold;
+}
+
+main {
+  background-color: var(--secondary);
+  color: var(--on-secondary);
+  font-family: 'EB Garamond', serif;
+  
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  
+  padding: 8rem 15vw;
+}
+
+.group {
+  grid-column: span 2;
+  display: grid;
+  
+  grid-template-columns: subgrid;
+  grid-template-areas:
+    "title  title"
+    "policy doctrine";
+}
+
+.group h3 {
+  grid-area: title;
+  font-size: 3rem;
+  padding: 1rem 0;
+}
+
+.group .policy {
+  grid-area: policy;
+}
+
+.group .doctrine {
+  grid-area: doctrine;
+}
+
+.group section {
+  background-color: var(--secondary-container-translucent);
+  color: var(--on-secondary-container);
+  opacity: 100%;
+  padding: 2rem;
+  border-radius: 1rem;
+}
+
+.group h4 {
+  font-size: 2rem;
+}
+
+.group p {
+  font-size: 1.25rem;
+  padding: 0.25rem 1rem;
+}
+
+.group cite {
+  font-size: 1.125rem;
 }
